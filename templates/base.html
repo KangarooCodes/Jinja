@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>;
+	{% block css %}<link rel='stylesheet' href='{{url_for("static", filename="/css/app.css")}}'>{% endblock %}
+	<title>{% block title %}Madlibs{% endblock %}</title>
+</head>
+<body>
+	<h1>Madlibs</h1>
+	<form action="/story">
+		{% for lib in madlib %}
+		  <p>{{ lib }}:
+			<input name="{{ lib }}">
+		  </p>
+		{% endfor %}
+		<button>Submit</button>
+	  </form>
+
+</body>
+</html>
